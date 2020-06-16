@@ -91,7 +91,7 @@ def run(words, version=1, level='H', picture=None, colorized=False, contrast=1.0
         if not os.path.exists(tempdir):
             os.makedirs(tempdir)
 
-        ver, qr_name = theqrmodule.get_qrcode(version, level, words, tempdir)
+        ver, qr_name = theqrmodule.get_qrcode(version, level, words, tempdir, background, foreground)
 
         if picture and picture[-4:]=='.gif':
             import imageio
