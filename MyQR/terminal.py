@@ -16,6 +16,7 @@ def main():
     argparser.add_argument('-bri', '--brightness', type = float, default = 1.0, help = 'A floating point value controlling the enhancement of brightness. Factor 1.0 always returns a copy of the original image, lower factors mean less color (brightness, contrast, etc), and higher values more. There are no restrictions on this value. Default: 1.0')
     argparser.add_argument('-n', '--name', help = "The filename of output tailed with one of {'.jpg', '.png', '.bmp', '.gif'}. eg. exampl.png")
     argparser.add_argument('-d', '--directory', default = os.getcwd(), help = 'The directory of output.')
+    argparser.add_argument('-b', '--background', default = 'white', help = 'The color of background.')
     args = argparser.parse_args()
     
     if args.picture and args.picture[-4:]=='.gif':
