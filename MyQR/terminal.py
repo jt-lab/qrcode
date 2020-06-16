@@ -17,6 +17,7 @@ def main():
     argparser.add_argument('-n', '--name', help = "The filename of output tailed with one of {'.jpg', '.png', '.bmp', '.gif'}. eg. exampl.png")
     argparser.add_argument('-d', '--directory', default = os.getcwd(), help = 'The directory of output.')
     argparser.add_argument('-b', '--background', default = 'white', help = 'The color of background.')
+    argparser.add_argument('-f', '--foreground', default = 'white', help = 'The color of foreground.')
     args = argparser.parse_args()
     
     if args.picture and args.picture[-4:]=='.gif':
@@ -32,7 +33,9 @@ def main():
             args.contrast,
             args.brightness,
             args.name,
-            args.directory
+            args.directory,
+            args.background,
+            args.foreground,
             )   
         print('Succeed! \nCheck out your', str(ver) + '-' + str(ecl), 'QR-code:', qr_name)
     except:
